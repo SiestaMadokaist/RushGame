@@ -1,0 +1,480 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    CFPropertyList (2.3.2)
+    actionmailer (3.2.22.2)
+      actionpack (= 3.2.22.2)
+      mail (~> 2.5.4)
+    actionpack (3.2.22.2)
+      activemodel (= 3.2.22.2)
+      activesupport (= 3.2.22.2)
+      builder (~> 3.0.0)
+      erubis (~> 2.7.0)
+      journey (~> 1.0.4)
+      rack (~> 1.4.5)
+      rack-cache (~> 1.2)
+      rack-test (~> 0.6.1)
+      sprockets (~> 2.2.1)
+    activemodel (3.2.22.2)
+      activesupport (= 3.2.22.2)
+      builder (~> 3.0.0)
+    activerecord (3.2.22.2)
+      activemodel (= 3.2.22.2)
+      activesupport (= 3.2.22.2)
+      arel (~> 3.0.2)
+      tzinfo (~> 0.3.29)
+    activesupport (3.2.22.2)
+      i18n (~> 0.6, >= 0.6.4)
+      multi_json (~> 1.0)
+    addressable (2.4.0)
+    airborne (0.2.3)
+      activesupport (>= 3.0.0)
+      rack-test (~> 0.6, >= 0.6.2)
+      rest-client (~> 1.7, >= 1.7.3)
+      rspec (~> 3.1, >= 3.1.0)
+    api-pagination (4.3.0)
+    arel (3.0.3)
+    ast (2.2.0)
+    aws-sdk (2.2.24)
+      aws-sdk-resources (= 2.2.24)
+    aws-sdk-core (2.2.24)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.2.24)
+      aws-sdk-core (= 2.2.24)
+    aws-sdk-v1 (1.66.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
+    bcrypt (3.1.10)
+    builder (3.0.4)
+    cancan (1.6.10)
+    capybara (2.6.2)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+    chronic (0.10.2)
+    coderay (1.1.1)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
+    concurrent-ruby (1.0.1)
+    concurrent-ruby-ext (1.0.1)
+      concurrent-ruby (~> 1.0.1)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
+    database_cleaner (1.5.1)
+    delorean (2.1.0)
+      chronic
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
+    diff-lcs (1.2.5)
+    domain_name (0.5.20160216)
+      unf (>= 0.0.5, < 1.0.0)
+    encode_with_alphabet (0.0.4)
+    equalizer (0.0.11)
+    erubis (2.7.0)
+    ethon (0.8.1)
+      ffi (>= 1.3.0)
+    excon (0.47.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
+    fdoc (0.3.3)
+      json
+      json-schema (~> 1.1)
+      kramdown
+      thor
+    ffi (1.9.10)
+    filecache (1.0)
+    fission (0.5.0)
+      CFPropertyList (~> 2.2)
+    fog (1.37.0)
+      fog-aliyun (>= 0.1.0)
+      fog-atmos
+      fog-aws (>= 0.6.0)
+      fog-brightbox (~> 0.4)
+      fog-core (~> 1.32)
+      fog-dynect (~> 0.0.2)
+      fog-ecloud (~> 0.1)
+      fog-google (<= 0.1.0)
+      fog-json
+      fog-local
+      fog-powerdns (>= 0.1.1)
+      fog-profitbricks
+      fog-radosgw (>= 0.0.2)
+      fog-riakcs
+      fog-sakuracloud (>= 0.0.4)
+      fog-serverlove
+      fog-softlayer
+      fog-storm_on_demand
+      fog-terremark
+      fog-vmfusion
+      fog-voxel
+      fog-vsphere (>= 0.4.0)
+      fog-xenserver
+      fog-xml (~> 0.1.1)
+      ipaddress (~> 0.5)
+    fog-aliyun (0.1.0)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      ipaddress (~> 0.8)
+      xml-simple (~> 1.1)
+    fog-atmos (0.1.0)
+      fog-core
+      fog-xml
+    fog-aws (0.9.1)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
+    fog-brightbox (0.10.1)
+      fog-core (~> 1.22)
+      fog-json
+      inflecto (~> 0.0.2)
+    fog-core (1.36.0)
+      builder
+      excon (~> 0.45)
+      formatador (~> 0.2)
+    fog-dynect (0.0.2)
+      fog-core
+      fog-json
+      fog-xml
+    fog-ecloud (0.3.0)
+      fog-core
+      fog-xml
+    fog-google (0.1.0)
+      fog-core
+      fog-json
+      fog-xml
+    fog-json (1.0.1)
+      fog-core (~> 1.0)
+      multi_json (~> 1.0)
+    fog-local (0.3.0)
+      fog-core (~> 1.27)
+    fog-powerdns (0.1.1)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+    fog-profitbricks (0.0.5)
+      fog-core
+      fog-xml
+      nokogiri
+    fog-radosgw (0.0.5)
+      fog-core (>= 1.21.0)
+      fog-json
+      fog-xml (>= 0.0.1)
+    fog-riakcs (0.1.0)
+      fog-core
+      fog-json
+      fog-xml
+    fog-sakuracloud (1.7.5)
+      fog-core
+      fog-json
+    fog-serverlove (0.1.2)
+      fog-core
+      fog-json
+    fog-softlayer (1.1.0)
+      fog-core
+      fog-json
+    fog-storm_on_demand (0.1.1)
+      fog-core
+      fog-json
+    fog-terremark (0.1.0)
+      fog-core
+      fog-xml
+    fog-vmfusion (0.1.0)
+      fission
+      fog-core
+    fog-voxel (0.1.0)
+      fog-core
+      fog-xml
+    fog-vsphere (0.6.1)
+      fog-core
+      rbvmomi (~> 1.8)
+    fog-xenserver (0.2.3)
+      fog-core
+      fog-xml
+    fog-xml (0.1.2)
+      fog-core
+      nokogiri (~> 1.5, >= 1.5.11)
+    formatador (0.2.5)
+    garner (0.5.2)
+      activesupport
+      json
+      multi_json (>= 1.3.0)
+      rack
+    grape (0.14.0)
+      activesupport
+      builder
+      hashie (>= 2.1.0)
+      multi_json (>= 1.3.2)
+      multi_xml (>= 0.5.2)
+      rack (>= 1.3.0)
+      rack-accept
+      rack-mount
+      virtus (>= 1.0.0)
+    grape-entity (0.4.8)
+      activesupport
+      multi_json (>= 1.3.2)
+    grape-rabl (0.4.1)
+      grape
+      i18n
+      rabl
+      tilt
+    grape-swagger (0.10.4)
+      grape (>= 0.8.0)
+      grape-entity (< 0.5.0)
+    grape_doc (0.2.1)
+      grape (~> 0.2, >= 0.2.1)
+      json (~> 1.7, >= 1.7.4)
+      trollop (~> 2.0)
+    hashdiff (0.3.0)
+    hashie (3.4.3)
+    hike (1.2.3)
+    hpricot (0.8.6)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
+    i18n (0.7.0)
+    ice_nine (0.11.2)
+    inflecto (0.0.2)
+    ipaddress (0.8.3)
+    jmespath (1.1.3)
+    journey (1.0.4)
+    json (1.8.3)
+    json-schema (1.2.1)
+    jwt (1.5.1)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    kramdown (1.10.0)
+    listen (3.0.6)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9.7)
+    mail (2.5.4)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
+    memoist (0.14.0)
+    method_source (0.8.2)
+    mime-types (1.25.1)
+    mini_portile (0.6.0)
+    multi_json (1.7.8)
+    multi_xml (0.5.5)
+    multipart-post (2.0.0)
+    mysql2 (0.3.16)
+    netrc (0.11.0)
+    newrelic-grape (2.1.0)
+      grape
+      newrelic_rpm
+    newrelic_rpm (3.15.0.314)
+    nokogiri (1.6.3.1)
+      mini_portile (= 0.6.0)
+    oauth (0.5.1)
+    oauth2 (1.1.0)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 1.0, < 1.5.2)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
+    omniauth (1.3.1)
+      hashie (>= 1.2, < 4)
+      rack (>= 1.0, < 3)
+    parallel (1.6.2)
+    parser (2.3.0.6)
+      ast (~> 2.2)
+    polyglot (0.3.5)
+    powerpack (0.1.1)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    puma (3.0.2)
+    rabl (0.12.0)
+      activesupport (>= 2.3.14)
+    rack (1.4.7)
+    rack-accept (0.4.5)
+      rack (>= 0.4)
+    rack-attack (4.4.1)
+      rack
+    rack-cache (1.6.1)
+      rack (>= 0.4)
+    rack-mount (0.8.3)
+      rack (>= 1.0.0)
+    rack-protection (1.5.3)
+      rack
+    rack-test (0.6.3)
+      rack (>= 1.0)
+    racksh (1.0.0)
+      rack (>= 1.0)
+      rack-test (>= 0.5)
+    rainbow (2.1.0)
+    rake (10.5.0)
+    rb-fsevent (0.9.7)
+    rb-inotify (0.9.7)
+      ffi (>= 0.5.0)
+    rbvmomi (1.8.2)
+      builder
+      nokogiri (>= 1.4.1)
+      trollop
+    representable (2.3.0)
+      uber (~> 0.0.7)
+    rerun (0.11.0)
+      listen (~> 3.0)
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
+    roar (1.0.4)
+      representable (>= 2.0.1, < 2.4.0)
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.3)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
+    rubocop (0.37.2)
+      parser (>= 2.3.0.4, < 3.0)
+      powerpack (~> 0.1)
+      rainbow (>= 1.99.1, < 3.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (~> 0.3)
+    ruby-lint (2.1.0)
+      parser (~> 2.2)
+      slop (~> 3.4, >= 3.4.7)
+    ruby-progressbar (1.7.5)
+    rufus-scheduler (3.2.0)
+    safe_yaml (1.0.4)
+    shoulda-matchers (2.8.0)
+      activesupport (>= 3.0.0)
+    sinatra (1.4.6)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    slop (3.6.0)
+    sprockets (2.2.3)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    thor (0.19.1)
+    thread_safe (0.3.5)
+    tilt (1.4.1)
+    treetop (1.4.15)
+      polyglot
+      polyglot (>= 0.3.1)
+    trollop (2.1.2)
+    typhoeus (1.0.1)
+      ethon (>= 0.8.0)
+    tzinfo (0.3.46)
+    uber (0.0.15)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
+    unicode-display_width (0.3.1)
+    vcr (3.0.1)
+    virtus (1.0.5)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
+      equalizer (~> 0.0, >= 0.0.9)
+    warden (1.2.6)
+      rack (>= 1.0)
+    webmock (1.24.2)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
+    will_paginate (3.0.7)
+    xml-simple (1.1.5)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  actionmailer
+  activerecord (~> 3.2.11)
+  airborne
+  api-pagination
+  aws-sdk
+  aws-sdk-v1
+  bcrypt
+  cancan
+  capybara
+  carrierwave
+  concurrent-ruby
+  concurrent-ruby-ext
+  database_cleaner
+  delorean
+  encode_with_alphabet
+  erubis
+  factory_girl
+  fdoc
+  filecache
+  fog
+  garner
+  grape
+  grape-entity (~> 0.4.8)
+  grape-rabl
+  grape-swagger
+  grape_doc
+  hpricot
+  httparty
+  kaminari
+  mail
+  memoist
+  multi_json (= 1.7.8)
+  mysql2 (= 0.3.16)
+  newrelic-grape
+  newrelic_rpm
+  nokogiri (= 1.6.3.1)
+  oauth
+  oauth2
+  omniauth
+  parallel
+  pry
+  puma
+  rack
+  rack-attack
+  rack-test
+  racksh
+  rake
+  rb-fsevent
+  rb-inotify
+  rerun
+  roar
+  rspec
+  rubocop
+  ruby-lint
+  rufus-scheduler
+  shoulda-matchers
+  sinatra
+  sprockets
+  typhoeus
+  vcr
+  warden
+  webmock
+  will_paginate (~> 3.0.6)
+
+BUNDLED WITH
+   1.10.6

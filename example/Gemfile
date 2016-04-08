@@ -1,0 +1,81 @@
+source 'https://rubygems.org'
+# ruby "2.1.0", :engine => "rbx", :engine_version => "2.2.10"
+# bundle config build.nokogiri
+gem 'grape-entity', "~> 0.4.8"
+gem 'carrierwave'
+gem 'fog', require: "fog/aws"
+gem 'will_paginate', '~> 3.0.6', require: ["will_paginate/active_record", "will_paginate/array"]
+gem 'grape_doc'
+gem 'concurrent-ruby'
+gem 'concurrent-ruby-ext'
+gem 'mail'
+# gem 'sinatra-resources'
+gem 'sinatra'
+gem 'erubis'
+gem 'rufus-scheduler'
+gem 'rack'
+gem 'omniauth'
+gem 'rspec'
+gem 'puma'
+gem 'grape'
+gem 'aws-sdk'
+gem 'aws-sdk-v1'
+gem 'warden'
+gem 'bcrypt'
+gem 'httparty'
+gem 'parallel'
+gem "grape-rabl", require: "grape/rabl"
+gem 'grape-swagger'
+gem 'cancan'
+gem 'memoist'
+gem 'kaminari'
+
+gem 'api-pagination'
+
+gem 'sprockets'
+gem 'activerecord', '~> 3.2.11', require: 'active_record'
+gem 'actionmailer'
+gem 'filecache'
+gem 'mysql2', '0.3.16'
+gem 'rake'
+gem 'roar'
+gem 'encode_with_alphabet'
+gem 'newrelic_rpm'
+gem 'newrelic-grape'
+gem 'racksh'
+gem 'fdoc'
+gem 'multi_json', '1.7.8'
+gem 'nokogiri', '1.6.3.1'
+gem 'oauth'
+gem 'typhoeus'
+gem 'rack-attack'
+gem 'oauth2'
+gem 'garner'
+gem 'rerun'
+
+group :development do
+end
+
+group :spec, :development do
+  gem 'ruby-lint'
+  gem 'rubocop'
+  gem 'pry', require: "pry"
+end
+
+group :spec do
+  gem 'rack-test', require: 'rack/test'
+  gem 'capybara'
+  gem 'rb-fsevent'
+  gem 'rb-inotify', require: false
+  gem 'database_cleaner'
+  gem 'factory_girl'
+  gem 'shoulda-matchers'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'delorean'
+  gem 'airborne'
+end
+
+group :misc do
+    gem 'hpricot'
+end

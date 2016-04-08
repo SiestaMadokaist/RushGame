@@ -1,0 +1,43 @@
+production:
+  adapter: mysql2
+  encoding: utf8
+  pool: 32
+  database: <%= ENV['SEMBAKO_DB_PRODUCTION'] %>
+  username: <%= ENV['SEMBAKO_USERNAME_PRODUCTION'] %>
+  password: <%= ENV['SEMBAKO_PASSWORD_PRODUCTION'] %>
+  host: <%= ENV['SEMBAKO_RDS_PRODUCTION'] %>
+  port: 3306
+  reconnect: true
+
+development: &dev
+  adapter: mysql2
+  encoding: utf8
+  pool: 64
+  reaping_frequency: 5
+  reconnect: false
+  database: <%= ENV['SEMBAKO_DB_DEVELOPMENT'] %>
+  username: <%= ENV['SEMBAKO_USERNAME_DEVELOPMENT'] %>
+  password: <%= ENV['SEMBAKO_PASSWORD_DEVELOPMENT'] %>
+  host: <%= ENV['SEMBAKO_RDS_DEVELOPMENT'] %>
+  port: 3306
+  reconnect: true
+
+remote:
+  adapter: mysql2
+  encoding: utf8
+  pool: 10
+  database: <%= ENV['SEMBAKO_DB_REMOTE'] %>
+  username: <%= ENV['SEMBAKO_USERNAME_REMOTE'] %>
+  password: <%= ENV['SEMBAKO_PASSWORD_REMOTE'] %>
+  host: <%= ENV['SEMBAKO_RDS_REMOTE'] %>
+  reconnect: true
+
+spec: &dev
+  adapter: mysql2
+  encoding: utf8
+  pool: 64
+  database: <%= ENV['SEMBAKO_DB_SPEC'] %>
+  username: <%= ENV['SEMBAKO_USERNAME_SPEC'] %>
+  password: <%= ENV['SEMBAKO_PASSWORD_SPEC'] %>
+  host: <%= ENV['SEMBAKO_RDS_SPEC'] %>
+  port: 3306

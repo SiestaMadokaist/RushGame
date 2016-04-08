@@ -1,0 +1,4 @@
+*.swo
+*.swp
+*/newrelic_agent.log
+*/newrelic_agent.log
