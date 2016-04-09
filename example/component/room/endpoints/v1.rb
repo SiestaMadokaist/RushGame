@@ -10,7 +10,7 @@ class Component::Room::Endpoint::V1 < Ramadoka::Endpoint::Base
   failure(&response_error)
 
   def route_create
-    Component::Room.new(params[:algorithm], nil, see_through: params[:see_through])
+    Component::Room.new(params[:algorithm], nil, params[:see_through])
   end
 
   route!(:route_create) do
@@ -27,7 +27,7 @@ class Component::Room::Endpoint::V1 < Ramadoka::Endpoint::Base
   end
   route!(:route_retrieve) do
     path("/retrieve")
-    method(:post)
+    method(:get)
     description("recheck the current condition")
     required(:room_id, type: String)
     error(RushGame::Player::ErrInvalidCard, 403)
