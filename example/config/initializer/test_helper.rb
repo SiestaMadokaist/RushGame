@@ -22,6 +22,7 @@ end
 
 require File.expand_path '../../../application', __FILE__
 
+
 DatabaseCleaner.strategy = :transaction
 DC = DatabaseCleaner
 

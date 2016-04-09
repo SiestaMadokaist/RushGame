@@ -1,8 +1,8 @@
-module Sembako
-end
-module Sembako::Mixins;
-end
-module Sembako::Mixins::ResponsePresenter
+module RushGame; end
+
+module RushGame::Mixins; end
+
+module RushGame::Mixins::ResponsePresenter
   def response_with_paging
     proc do |presenter, result, request|
       Common::Primitive::Entity.show(data: result, presenter: presenter, pagination: {page: request.page, per_page: request.per_page})
@@ -11,7 +11,7 @@ module Sembako::Mixins::ResponsePresenter
 
   def response_no_paging
     proc do |presenter, result, _|
-      Common::Primitive::Entity.show(data:result, presenter:presenter)
+      Common::Primitive::Entity.show(data: result, presenter: presenter)
     end
   end
 

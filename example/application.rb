@@ -1,8 +1,10 @@
 require File.expand_path("../environment", __FILE__)
 require File.expand_path("../../core/init.rb", __FILE__)
 Dir["#{File.dirname(__FILE__)}/../core/common/*.rb"].each{|f| require f}
+
 Dir["#{File.dirname(__FILE__)}//common/**/*.rb"].each{|f| require f}
 Dir["#{File.dirname(__FILE__)}/component/*/init.rb"].each{|f| require f}
+
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 module Ramadoka
   class API < Grape::API
@@ -13,18 +15,13 @@ module Ramadoka
     end
     namespace :v1 do
       namespace :web do
-        mount Component::Video::Endpoint::V1.mounted_class
+        mount Component::Room::Endpoint::V1.mounted_class
       end
     end
     namespace :v2 do
       namespace :web do
       end
       namespace :mobile do
-        mount Component::Deal::Endpoint::V2.mounted_class
-        mount Component::City::Endpoint::V2.mounted_class
-        mount Component::District::Endpoint::V2.mounted_class
-        mount Component::SubDistrict::Endpoint::V2.mounted_class
-        mount Component::FastOrder::Endpoint::V2.mounted_class
       end
     end
 

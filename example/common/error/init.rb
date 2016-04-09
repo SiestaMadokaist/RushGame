@@ -8,6 +8,11 @@ module ERR
       # TODO
       self.name
     end
+
+    def code
+      self.class.code
+    end
+
   end
 
   class ServerError503 < CustomError
@@ -33,4 +38,5 @@ module ERR
       404
     end
   end
+
 end
