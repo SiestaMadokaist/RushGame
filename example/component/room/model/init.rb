@@ -39,11 +39,20 @@ class Component::Room
     @id = SecureRandom::urlsafe_base64(8)
     @see_through = see_through == :true
     freeze_com_card!
+    decide_selected_card_in_background
     Component::Room::register!(@id, self)
   end
 
   def algorithm_name
     @algorithm.name
+  end
+
+  def decide_selected_card_in_background
+    Concurrent::Future.execute do
+      @locked = true
+      domain.selected_card(@com_card)
+      @locked = false
+    end
   end
 
   def freeze_com_card!
@@ -52,8 +61,9 @@ class Component::Room
 
   # @param card_id [Fixnum] the card available for the player
   def play!(card_id)
+    return self if @locked
     game = domain.play(card_id, @com_card)
-    Component::Room.new(@algorithm, game)
+    Component::Room.new(@algorithm.symbol, game)
   end
 
   def ai

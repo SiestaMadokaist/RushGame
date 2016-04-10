@@ -148,6 +148,13 @@ class Ramadoka::Endpoint::Router
             _on_failure.call(_presenter, e, _errors, req)
           else
             _on_success.call(_presenter, result, req)
+          ensure
+            _req = Maybe
+              .from_value(req)
+              .map(&:request)
+            _path = _req.map(&:request).map(&:path).value
+            _status = _req.map(&:status).value
+            puts "#{_path} #{status}"
           end
         end
       end

@@ -138,6 +138,7 @@ class Ramadoka::Endpoint::Base
   success{|_, result, _| result}
   failure{|_, err, _| err}
 
+  attr_reader(:request)
   def initialize(request)
     @request = request
   end

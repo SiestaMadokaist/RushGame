@@ -1,7 +1,7 @@
 require File.expand_path("../environment", __FILE__)
 require File.expand_path("../../core/init.rb", __FILE__)
+require "concurrent"
 Dir["#{File.dirname(__FILE__)}/../core/common/*.rb"].each{|f| require f}
-
 Dir["#{File.dirname(__FILE__)}//common/**/*.rb"].each{|f| require f}
 Dir["#{File.dirname(__FILE__)}/component/*/init.rb"].each{|f| require f}
 

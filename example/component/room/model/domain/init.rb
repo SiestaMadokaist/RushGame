@@ -1,5 +1,6 @@
 class Component::Room::Domain
 
+  extend Memoist
   # @param room [Component::Room]
   def initialize(room)
     @room = room
@@ -14,6 +15,7 @@ class Component::Room::Domain
     algorithm
       .decide(@room.game, com_card)
   end
+  memoize(:selected_card)
 
   # @param player_card [Fixnum]
   # @param com_card [Fixnum]

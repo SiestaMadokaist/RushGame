@@ -17,7 +17,7 @@ class Component::Room::Endpoint::V1 < Ramadoka::Endpoint::Base
     path("/create")
     method(:post)
     description("create a new room")
-    optional(:algorithm, type: Symbol, values: [:deterministic], default: :deterministic)
+    optional(:algorithm, type: Symbol, values: [:deterministic, :deterministic2, :roulette, :purerandom], default: :deterministic)
     optional(:see_through, type: Symbol, values: [:true, :false], default: :true)
     presenter(Component::Room::Entity::Lite)
   end
@@ -30,7 +30,6 @@ class Component::Room::Endpoint::V1 < Ramadoka::Endpoint::Base
     method(:get)
     description("recheck the current condition")
     required(:room_id, type: String)
-    error(RushGame::Player::ErrInvalidCard, 403)
     error(Component::Room::RoomNotInitialized)
     presenter(Component::Room::Entity::Lite)
   end
@@ -46,7 +45,7 @@ class Component::Room::Endpoint::V1 < Ramadoka::Endpoint::Base
     description("play the selected card")
     required(:room_id, type: String)
     required(:card_id, type: Integer)
-    optional(:algorithm, type: Symbol, values: [:deterministic], default: :deterministic)
+    error(RushGame::Player::ErrInvalidCard, 403)
     error(Component::Room::RoomNotInitialized)
     presenter(Component::Room::Entity::Lite)
   end
