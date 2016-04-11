@@ -11,6 +11,7 @@ class RushGame::Algorithm::Base
   class << self
     # @param algorithm [Symbol]
     def derive(algorithm)
+      # return RushGame::Algorithm::Counter
       return RushGame::Algorithm::Deterministic if algorithm == Symbols::Deterministic
       return RushGame::Algorithm::Deterministic2 if algorithm == Symbols::Deterministic2
       return RushGame::Algorithm::Roulette if algorithm == Symbols::Roulette
@@ -19,7 +20,7 @@ class RushGame::Algorithm::Base
   end
 
   # @param com_card [Fixnum]
-  # @param game_state [RushGame::Rush]
+  # @param game_state [RushGame::Game]
   def decide(com_card, game_state)
     raise NotImplementedError
   end
@@ -33,7 +34,7 @@ class RushGame::Algorithm::Deterministic
   end
 
   # @param com_card [Fixnum]
-  # @param game_state [RushGame::Rush]
+  # @param game_state [RushGame::Game]
   def decide(game_state, com_card, n = 10000)
     chances = game_state.simulation_statistics(com_card, n)
     maximum_win_rate = chances.map(&:win_rate).max
@@ -41,6 +42,28 @@ class RushGame::Algorithm::Deterministic
       .shuffle
       .first
       .card
+  end
+
+end
+
+class RushGame::Algorithm::InverseDeterministic
+
+  def self.symbol
+    :"???"
+  end
+
+  # @param com_card [Fixnum]
+  # @param game_statee [RushGame::Game]
+  def decide(game_state, com_card, n = 10000)
+    me = game_state.me
+    him = game_state.him
+    com = game_state.com
+    storage = game_state.storage
+    simulator = RushGame::Game.new(him, me, com, storage)
+    expected_opp_card = RushGame::Algorithm::Deterministic.new.decide(simulator, com_card)
+    selected = (me.ammo + me.ammo).drop_while{|x| x < expected_opp_card}.take(2).last
+    return me.ammo.first if selected.nil?
+    return selected
   end
 
 end
@@ -62,7 +85,7 @@ class RushGame::Algorithm::Deterministic2
   end
 
   # @param com_card [FixNum]
-  # @param game_state [RushGame::Rush]
+  # @param game_state [RushGame::Game]
   def decide(game_state, com_card, n = 10000)
     chances = game_state.simulation_statistics(com_card, n)
     chances.sort_by(&:win_rate).reverse.take(2).shuffle.first.card
@@ -77,7 +100,7 @@ class RushGame::Algorithm::Roulette
   end
 
   # @param com_card [Fixnum]
-  # @param game_state [RushGame::Rush]
+  # @param game_state [RushGame::Game]
   def decide(game_state, com_card, n = 10000)
     chances = game_state.simulation_statistics(com_card, n)
     probs = chances.map(&:win_rate).map{|x| x * x}

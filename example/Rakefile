@@ -16,9 +16,16 @@ end
 task :rails_env do
 end
 
-task :simulate do
+task :simulate, :ai1, :ai2, :n do |t, args|
   require File.expand_path("../application", __FILE__)
-  RushGame::Simulation.simulate(100)
+  ai1, ai2 = args
+    .take(2)
+    .map{|k, v| v}
+    .map(&:camelize)
+    .map{|x| "RushGame::AI::#{x}"}
+    .map{|x| eval(x)}
+  n = args[:n] || "10"
+  RushGame::Simulation.simulate(ai1, ai2, n.to_i)
 end
 
 task :environment do

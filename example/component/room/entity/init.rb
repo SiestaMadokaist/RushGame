@@ -12,7 +12,7 @@ module Component::Room::Entity
     expose(:algorithm_name, documentation: {type: String})
     expose(:id, documentation: {type: Integer})
     expose(:ai, documentation: {type: RushGame::Player}) do |room, opt|
-      room.ai if(opt[:see_through])
+      opt[:ai] || room.ai
     end
     expose(:challenger, documentation: {type: RushGame::Player})
     expose(:com, documentation: {type: RushGame::Player})

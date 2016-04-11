@@ -18,6 +18,11 @@ class RushGame::AI
 
 end
 
+RushGame::AI::InverseDeterministic = RushGame::AI.new(
+  RushGame::Player.new("InverseDeterministic"),
+  RushGame::Algorithm::InverseDeterministic.new
+)
+
 RushGame::AI::Deterministic = RushGame::AI.new(
   RushGame::Player.new("Deterministic"),
   RushGame::Algorithm::Deterministic.new
@@ -84,9 +89,9 @@ class RushGame::Simulation
     @memo = {}
     end
 
-    def simulate(n)
+    def simulate(ai1, ai2, n)
       (0..n - 1).map do |i|
-        s = _simulation.duel.duel.duel.duel.duel.duel
+        s = _simulation(ai1, ai2).duel.duel.duel.duel.duel.duel
         p1 = s.game_state1.me
         p2 = s.game_state2.me
         winner = if(p1.point > p2.point)
@@ -102,9 +107,7 @@ class RushGame::Simulation
       end
     end
 
-    private def _simulation
-      ai1 = RushGame::AI::Deterministic2
-      ai2 = RushGame::AI::Deterministic
+    private def _simulation(ai1, ai2)
       com = RushGame::Player.new("COM")
       RushGame::Simulation.new(
         ai1,
